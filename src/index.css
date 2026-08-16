@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --color-brand-navy: #0b1628;
+  --color-brand-navy-light: #152238;
+  --color-brand-navy-dark: #060d18;
+  --color-brand-gold: #c9a96e;
+  --color-brand-gold-light: #dfc490;
+  --color-brand-gold-dark: #a8864a;
+  --color-brand-cream: #f8f6f1;
+  --color-brand-cream-dark: #ebe6dc;
+  --color-brand-slate: #64748b;
+  --color-brand-text: #1e293b;
+  --color-brand-black: #0b1628;
+  --color-brand-white: #faf9f7;
+  --color-brand-gray: #64748b;
+  --color-brand-muted: #f0ece4;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-cream text-brand-text font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-gold text-brand-navy-dark;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201, 169, 110, 0.15), transparent 50%),
+      radial-gradient(ellipse 60% 50% at 10% 80%, rgba(21, 34, 56, 0.8), transparent 50%),
+      linear-gradient(135deg, #060d18 0%, #0b1628 40%, #152238 100%);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #c9a96e 0%, #dfc490 50%, #a8864a 100%);
+  }
+
+  .gradient-section {
+    background: linear-gradient(180deg, #f8f6f1 0%, #f0ece4 100%);
+  }
+
+  .gold-line {
+    @apply h-1 w-16 rounded-full;
+    background: linear-gradient(90deg, #c9a96e, #dfc490);
+  }
+
+  .glass-card {
+    @apply border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #dfc490, #c9a96e, #a8864a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 30px rgba(201, 169, 110, 0.25);
+  }
+
+  .shadow-card {
+    box-shadow: 0 10px 40px rgba(11, 22, 40, 0.08);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 20px 60px rgba(11, 22, 40, 0.15);
+  }
+}
